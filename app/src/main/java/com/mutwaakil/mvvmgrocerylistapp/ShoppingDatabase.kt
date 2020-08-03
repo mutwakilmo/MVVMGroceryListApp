@@ -18,7 +18,7 @@ import androidx.room.RoomDatabase
 abstract class ShoppingDatabase : RoomDatabase() {
 
     abstract fun getShoppingDao(): ShoppingDao
-
+//companion
     companion object {
         @Volatile
         private var instance: ShoppingDatabase? = null
