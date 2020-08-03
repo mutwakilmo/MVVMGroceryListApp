@@ -1,7 +1,8 @@
-package com.mutwaakil.mvvmgrocerylistapp
+package com.mutwaakil.mvvmgrocerylistapp.data.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.mutwaakil.mvvmgrocerylistapp.data.db.entities.ShoppingItem
 
 /**
  * Created by Mutwakil-Mo 🤩
@@ -14,7 +15,7 @@ interface ShoppingDao {
     suspend  fun upsert(item: ShoppingItem)
 
     @Delete
-     suspend fun delete(item:ShoppingItem)
+     suspend fun delete(item: ShoppingItem)
 
     @Query("SELECT * FROM shopping_item")
     fun getAllShoppingItems(): LiveData<List<ShoppingItem>>

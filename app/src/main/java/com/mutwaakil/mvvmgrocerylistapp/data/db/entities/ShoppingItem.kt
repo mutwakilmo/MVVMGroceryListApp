@@ -1,4 +1,4 @@
-package com.mutwaakil.mvvmgrocerylistapp
+package com.mutwaakil.mvvmgrocerylistapp.data.db.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
