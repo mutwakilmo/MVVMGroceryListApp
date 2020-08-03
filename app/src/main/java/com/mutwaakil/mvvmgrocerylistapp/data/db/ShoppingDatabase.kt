@@ -19,7 +19,8 @@ import com.mutwaakil.mvvmgrocerylistapp.data.db.entities.ShoppingItem
 abstract class ShoppingDatabase : RoomDatabase() {
 
     abstract fun getShoppingDao(): ShoppingDao
-//companion
+
+    //companion
     companion object {
         @Volatile
         private var instance: ShoppingDatabase? = null
@@ -28,12 +29,12 @@ abstract class ShoppingDatabase : RoomDatabase() {
 
         operator fun invoke(context: Context) = instance
             ?: synchronized(LOCK) {
-            instance
-                ?: createDatabase(
-                    context
-                )
-                    .also { instance = it }
-        }
+                instance
+                    ?: createDatabase(
+                        context
+                    )
+                        .also { instance = it }
+            }
 
 
         private fun createDatabase(context: Context) =
@@ -42,6 +43,5 @@ abstract class ShoppingDatabase : RoomDatabase() {
                 ShoppingDatabase::class.java, "ShoppingDB.db"
             ).build()
     }
-
 
 }
